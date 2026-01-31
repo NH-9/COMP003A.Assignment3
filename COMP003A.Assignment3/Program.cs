@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace COMP003A.Assignment3
 {
@@ -32,6 +33,39 @@ namespace COMP003A.Assignment3
             bool inputPermit = Console.ReadLine() == "yes";
             Console.Write("Do you have a valid Driver's License? (yes/no): ");
             bool inputLicense = Console.ReadLine() == "yes";
+
+            string readyStatus = "";
+            if (ageStatus == "Allowed Under Supervision")
+            {
+                if (inputLicense ||  inputPermit)
+                {
+                    readyStatus = "Conditionally Ready";
+                }
+                else
+                {
+                    readyStatus = "Not Ready";
+                }
+            }
+            else if (ageStatus == "Allowed")
+            {
+                if (inputLicense)
+                {
+                    readyStatus = "Ready";
+                }
+                else if (inputPermit)
+                {
+                    readyStatus = "Conditionally Ready";
+                }
+                else
+                {
+                    readyStatus = "Not Ready";
+                }
+            }
+            else
+            {
+                readyStatus = "Not Ready";
+            }
+            Console.WriteLine($"\nReadiness Status: {readyStatus}");
         }
     }
 }
