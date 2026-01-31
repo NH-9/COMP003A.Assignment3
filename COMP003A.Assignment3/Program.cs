@@ -6,7 +6,13 @@ namespace COMP003A.Assignment3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("---Driving Readiness Evaluation---");
+
+            Console.WriteLine($"\nCurrent Year: {DateTime.Now.Year}");
+            Console.Write("Enter your birth year: ");
+            int inputBirth = int.Parse(Console.ReadLine());
+
+
         }
     }
 }
