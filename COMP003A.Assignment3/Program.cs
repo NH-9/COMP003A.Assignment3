@@ -66,6 +66,24 @@ namespace COMP003A.Assignment3
                 readyStatus = "Not Ready";
             }
             Console.WriteLine($"\nReadiness Status: {readyStatus}");
+
+            Console.WriteLine("\nSelect a guidance option:");
+            switch (readyStatus)
+            {
+                case "Ready":
+                    Console.WriteLine("RDL - Review Driving Laws\nRAV - Register a Vehicle\nPIN - Purchase Insurance");
+                    break;
+
+                case "Conditionally Ready":
+                    Console.WriteLine("RDL - Review Driving Laws\nTBT - Take Behind-The-Wheel Test\nPDS - Practice Driving Skills");
+                    break;
+
+                case "Not Ready":
+                    Console.WriteLine("LDL - Learn Driving Laws\nTPT - Take Practice Test\nTLT - Take Driving Laws Test");
+                    break;
+            }
+            Console.Write("Enter Choice: ");
+            string inputGuidance = Console.ReadLine();
         }
     }
 }
