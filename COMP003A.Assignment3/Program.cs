@@ -34,52 +34,55 @@ namespace COMP003A.Assignment3
             Console.Write("Do you have a valid Driver's License? (yes/no): ");
             bool inputLicense = Console.ReadLine() == "yes";
 
-
+            string noReady = "Not Ready (you may not operate an vehicle)";
+            string someReady = "Conditionally Ready (you may operate a vehicle under the supervision of a licensed driver aged 25 or older)";
+            string fullReady = "Ready (you may operate a vehicle alone)";
             string readyStatus = "";
+
             if (ageStatus == "Allowed Under Supervision")
             {
                 if (inputLicense || inputPermit)
                 {
-                    readyStatus = "Conditionally Ready";
+                    readyStatus = someReady;
                 }
                 else
                 {
-                    readyStatus = "Not Ready";
+                    readyStatus = noReady;
                 }
             }
             else if (ageStatus == "Allowed")
             {
                 if (inputLicense)
                 {
-                    readyStatus = "Ready";
+                    readyStatus = fullReady;
                 }
                 else if (inputPermit)
                 {
-                    readyStatus = "Conditionally Ready";
+                    readyStatus = someReady;
                 }
                 else
                 {
-                    readyStatus = "Not Ready";
+                    readyStatus = noReady;
                 }
             }
             else
             {
-                readyStatus = "Not Ready";
+                readyStatus = noReady;
             }
             Console.WriteLine($"\nReadiness Status: {readyStatus}");
 
             Console.WriteLine("\nSelect a guidance option:");
             switch (readyStatus)
             {
-                case "Ready":
+                case "Ready (you may operate a vehicle alone)":
                     Console.WriteLine("RDL - Review Driving Laws\nRAV - Register a Vehicle\nPIN - Purchase Insurance");
                     break;
 
-                case "Conditionally Ready":
+                case "Conditionally Ready (you may operate a vehicle under the supervision of a licensed driver aged 25 or older)":
                     Console.WriteLine("RDL - Review Driving Laws\nTBT - Take Behind-The-Wheel Test\nPDS - Practice Driving Skills");
                     break;
 
-                case "Not Ready":
+                case "Not Ready (you may not operate an vehicle)":
                     Console.WriteLine("LDL - Learn Driving Laws\nTPT - Take Practice Test\nTLT - Take Driving Laws Test");
                     break;
             }
