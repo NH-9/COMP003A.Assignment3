@@ -27,6 +27,11 @@ namespace COMP003A.Assignment3
                 ageStatus = "Allowed";
             }
             Console.WriteLine($"\nCalculated Age: {age}\nAble To Drive: {ageStatus}");
+
+            Console.Write("\nDo you have a valid Learner's Permit? (yes/no): ");
+            bool inputPermit = Console.ReadLine() == "yes";
+            Console.Write("Do you have a valid Driver's License? (yes/no): ");
+            bool inputLicense = Console.ReadLine() == "yes";
         }
     }
 }
