@@ -34,7 +34,7 @@ namespace COMP003A.Assignment3
             Console.Write("Do you have a valid Driver's License? (yes/no): "); //mandatory rule: neccesary to be granted full readiness
             bool inputLicense = Console.ReadLine() == "yes";
 
-            string noReady = "Not Ready (you may not operate an vehicle)";
+            string noReady = "Not Ready (you may not operate a vehicle)";
             string someReady = "Conditionally Ready (you may operate a vehicle under the supervision of a licensed driver aged 25 or older)";
             string fullReady = "Ready (you may operate a vehicle alone)";
             string readyStatus = "";
@@ -82,7 +82,7 @@ namespace COMP003A.Assignment3
                     Console.WriteLine("RDL - Review Driving Laws\nTBT - Take Behind-The-Wheel Test\nPDS - Practice Driving Skills");
                     break;
 
-                case "Not Ready (you may not operate an vehicle)":
+                case "Not Ready (you may not operate a vehicle)":
                     Console.WriteLine("LDL - Learn Driving Laws\nTPT - Take Practice Test\nTLT - Take Driving Laws Test");
                     break;
             }
